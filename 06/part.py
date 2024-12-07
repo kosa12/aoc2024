@@ -44,3 +44,6 @@ while not out_of_bounds(guardPos):
     guardPos = newPos
 
 print(visited)
+
+
+
