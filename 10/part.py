@@ -32,3 +32,6 @@ for start in starts:
 
 print(totA)
 print(totB)
+
+
+
