@@ -12,7 +12,7 @@ def eval_label(label, operations, initials):
             return eval_label(l1, operations, initials) != eval_label(l2, operations, initials)
 
 
-def q1():
+def part1():
     with open('input.txt', 'r') as f:
         inputs, relations = f.read().split('\n\n')
         inputs = inputs.splitlines()
@@ -39,24 +39,9 @@ def q1():
 
     return int(out_num, 2)
 
-
-def eval_label_path(label, operations, initials):
-    if label in initials:
-        return initials[label]
-
-    l1, l2, op = operations[label]
-
-    match op:
-        case 'OR':
-            return eval_label(l1, operations, initials) or eval_label(l2, operations, initials)
-        case 'AND':
-            return eval_label(l1, operations, initials) and eval_label(l2, operations, initials)
-        case 'XOR':
-            return eval_label(l1, operations, initials) != eval_label(l2, operations, initials)
-
 if __name__ == '__main__':
     from time import perf_counter as pc
 
     st = pc()
-    print(f'Part 1: {q1()}')
+    print(f'Part 1: {part1()}')
     pt1 = pc()
